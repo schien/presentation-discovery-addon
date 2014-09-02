@@ -1,0 +1,9 @@
+{
+  "name": "presentation-discovery-addon",
+  "title": "presentation-discovery-addon",
+  "id": "jid1-Kv71Lhjd5R10iA",
+  "description": "Add-on for Presentation API device discovery",
+  "author": "Shih-Chiang Chien",
+  "license": "MPL 2.0",
+  "version": "0.1"
+}
