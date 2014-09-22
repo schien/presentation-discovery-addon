@@ -41,6 +41,19 @@ self.port.on('ondata', function(msg) {
   window.postMessage(msg, '*');
 });
 
+function sessionClose(localId, remoteId) {
+  self.port.emit('sessionClose', {localId: localId, remoteId: remoteId});
+}
+
+self.port.on('sessionClose', function(channelId) {
+  let msg = {
+    type: 'sessionClose',
+    channelId: channelId,
+  };
+  window.postMessage(msg, '*');
+});
+
 exportFunction(peekDevice, unsafeWindow.navigator, {defineAs: "peekDevice"});
 exportFunction(createOffer, unsafeWindow.navigator, {defineAs: "createOffer"});
 exportFunction(sessionSend, unsafeWindow.navigator, {defineAs: "sessionSend"});
+exportFunction(sessionClose, unsafeWindow.navigator, {defineAs: "sessionClose"});
